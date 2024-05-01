@@ -1,0 +1,84 @@
+:root {
+    --primary-clr: #4A9DFF;
+    --background-dark: #18212E;
+    --background-light: #222F3C;
+    --background-lighter: #273647;
+    --font-clr: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    color: var(--font-clr);
+    /* For debugging */
+    /* outline: 1px dashed red; */
+}
+
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+main {
+    /* Use the height of the body */
+    min-height: inherit;
+    max-width: 100vw;
+    background: var(--background-dark);
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr 6fr;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    background: var(--background-light);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+
+.sidebar .nav-link img {
+    filter: invert(1);
+    height: 30px;
+    aspect-ratio: 1 / 1;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-items {
+    display: grid;
+}
+
+.nav-link {
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    align-items: center;
+    width: 100%;
+    padding: 20px 30px;
+    /* So the link don't shift on hover */
+    border-left: 4px solid transparent;
+}
+
+.nav-link:hover {
+    background: var(--background-lighter);
+    border-left: 4px solid var(--primary-clr);
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    padding-block: 40px;
+}
+
+.title span {
+    color: var(--primary-clr);
+}
