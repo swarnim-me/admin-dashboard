@@ -87,6 +87,9 @@ nav {
 
 section.dashboard {
     padding: var(--padding-value);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr 6fr;
 }
 
 .header {
@@ -95,6 +98,7 @@ section.dashboard {
     grid-template-columns: auto 10fr 1fr auto;
     gap: 30px;
     place-items: center;
+    grid-column: 1 / -1;
 }
 
 .header .bell-icon-wrapper img {
@@ -145,4 +149,40 @@ section.dashboard {
     border-radius: 50px;
     outline: none;
     font-weight: 400;
+}
+
+.toolbar {
+    font-size: 1.8rem;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 4fr auto auto;
+    align-content: center;
+    gap: 20px;
+}
+
+.toolbar .greeting {
+    font-weight: 200;
+}
+
+.toolbar .greeting-name {
+    font-weight: 700;
+}
+
+.toolbar .greeting-handle {
+    color: var(--primary-clr);
+    padding-left: 20px;
+}
+
+.toolbar .btn {
+    padding-block: 10px;
+    width: 150px;
+    border: none;
+    background: var(--background-light);
+    border-radius: 30px;
+    justify-self: end;
+    cursor: pointer;
+}
+
+.toolbar .new-project-btn {
+    background: var(--primary-clr);
 }
