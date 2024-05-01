@@ -4,6 +4,7 @@
     --background-light: #222F3C;
     --background-lighter: #273647;
     --font-clr: #fff;
+    --padding-value: 30px;
 }
 
 * {
@@ -28,7 +29,6 @@ main {
     background: var(--background-dark);
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 1fr 6fr;
 }
 
 .sidebar {
@@ -69,6 +69,7 @@ nav {
     border-left: 4px solid transparent;
 }
 
+.active,
 .nav-link:hover {
     background: var(--background-lighter);
     border-left: 4px solid var(--primary-clr);
@@ -82,4 +83,66 @@ nav {
 
 .title span {
     color: var(--primary-clr);
+}
+
+section.dashboard {
+    padding: var(--padding-value);
+}
+
+.header {
+    display: grid;
+    /* Might need to tweak this */
+    grid-template-columns: auto 10fr 1fr auto;
+    gap: 30px;
+    place-items: center;
+}
+
+.header .bell-icon-wrapper img {
+    height: 30px;
+    filter: invert(1);
+    aspect-ratio: 1 / 1;
+}
+
+.header .profile-icon {
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    background: url("../assets/images/female2.jpg") no-repeat;
+    background-position: bottom -10px left 0px;
+    background-size: cover;
+}
+
+.hamburger-icon {
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    justify-self: left;
+}
+
+.hamburger-icon div {
+    height: 2px;
+    width: 100%;
+    background: white;
+}
+
+.hamburger-icon div:nth-child(3) {
+    width: 70%;
+}
+
+.search {
+    justify-self: stretch;
+}
+
+.header input {
+    width: 100%;
+    background: var(--background-light);
+    border: none;
+    padding: 18px 30px;
+    border-radius: 50px;
+    outline: none;
+    font-weight: 400;
 }
