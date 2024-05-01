@@ -88,8 +88,9 @@ nav {
 section.dashboard {
     padding: var(--padding-value);
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr 6fr;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 3fr;
+    gap: 30px;
 }
 
 .header {
@@ -145,6 +146,7 @@ section.dashboard {
     width: 100%;
     background: var(--background-light);
     border: none;
+    font-size: 14px;
     padding: 18px 30px;
     border-radius: 50px;
     outline: none;
@@ -180,9 +182,46 @@ section.dashboard {
     background: var(--background-light);
     border-radius: 30px;
     justify-self: end;
+    font-size: 14px;
     cursor: pointer;
 }
 
 .toolbar .new-project-btn {
     background: var(--primary-clr);
+}
+
+.feed {
+    grid-row: 3 / 5;
+    grid-column: 1 / 2;
+}
+
+.announcements {
+    background: var(--background-light);
+    padding: 20px;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+
+.a-card {
+    background: var(--background-lighter);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.a-title {
+    font-weight: normal;
+}
+
+.a-card small {
+    opacity: 40%;
+}
+
+.trending {
+    grid-row: 4 / 5;
+    grid-column: 2 / 3;
 }
