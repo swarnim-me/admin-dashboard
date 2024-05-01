@@ -39,6 +39,9 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     padding-block: 30px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 
@@ -89,7 +92,7 @@ section.dashboard {
     padding: var(--padding-value);
     display: grid;
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr 3fr;
+    grid-template-rows: auto auto 3fr 3fr;
     gap: 30px;
 }
 
@@ -195,17 +198,20 @@ section.dashboard {
     grid-column: 1 / 2;
 }
 
-.announcements {
+.announcements,
+.trending {
     background: var(--background-light);
     padding: 20px;
-    grid-row: 3 / 4;
-    grid-column: 2 / 3;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     gap: 20px;
 }
 
+.announcements {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+}
 
 .a-card {
     background: var(--background-lighter);
@@ -224,4 +230,54 @@ section.dashboard {
 .trending {
     grid-row: 4 / 5;
     grid-column: 2 / 3;
+    overflow: auto;
+    height: 100%;
+}
+
+.t-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.pic1 {
+    background: url("../assets/images/male1.jpg");
+}
+
+.pic2 {
+    background: url("../assets/images/male2.jpg");
+}
+
+.pic3 {
+    background: url("../assets/images/female1.jpg");
+}
+
+.pic4 {
+    background: url("../assets/images/male3.jpg");
+}
+
+.t-picture {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+
+
+.t-card .t-name,
+.t-handle {
+    grid-column: 2 / 3;
+}
+
+.t-handle {
+    color: var(--primary-clr);
+}
+
+.t-name {
+    font-weight: 100;
+    opacity: 50%;
 }
