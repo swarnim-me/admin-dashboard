@@ -17,6 +17,28 @@
     /* outline: 1px dashed red; */
 }
 
+/* Scroll Bar design */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--background-light);
+    border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--background-ligher);
+}
+
 body {
     min-height: 100vh;
     max-width: 100vw;
